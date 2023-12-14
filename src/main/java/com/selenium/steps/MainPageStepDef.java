@@ -1,19 +1,19 @@
 package com.selenium.steps;
 
 import com.selenium.constants.ConfigConstants;
-import com.selenium.util.ConfigUtil;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.Before;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import lombok.extern.slf4j.Slf4j;
-import io.cucumber.java.After;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import com.selenium.library.InterestStocksLib;
 import com.selenium.manager.PageFactoryManager;
 import com.selenium.pages.google.HomePage;
+import com.selenium.util.ConfigUtil;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import lombok.extern.slf4j.Slf4j;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 

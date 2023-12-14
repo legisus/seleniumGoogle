@@ -1,6 +1,7 @@
 package com.selenium.library;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.selenium.constants.ConfigConstants;
 import com.selenium.dto.ListOfStocksObject;
 import com.selenium.dto.stocksWithParams.StockDiscovered;
@@ -8,7 +9,7 @@ import com.selenium.util.ConfigUtil;
 import com.selenium.util.RestRequests;
 import io.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
