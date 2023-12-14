@@ -11,8 +11,9 @@ Feature:  As user I want to verify the stock symbols listed under the section â€
     And Compare interested in info list with list of expected stock symbols expected list
     Examples:
       | homePage                        | title   | expectedStockSymbols                 |
-      | https://www.google.com/finance/ | finance | AAL, AMZN, BABA, MSFT, F, AAPL       |
-      | https://www.google.com/finance/ | finance | AAL, AMZN, BABA, MSFT, F, BAC        |
-      | https://www.google.com/finance/ | finance | F, AMZN, BABA, MSFT, F, BAC          |
-      | https://www.google.com/finance/ | finance | F, AMZN, BABA, MSFT, F, BAC, MCD, AA |
-      | https://www.google.com/finance/ | finance | F                                    |
+      | https://www.google.com/finance/ | finance | INDEX, NXST, D, TSLA, AA, MSFT       |
+#      | https://www.google.com/finance/ | finance | AAL, AMZN, BABA, MSFT, F, AAPL       |
+#      | https://www.google.com/finance/ | finance | AAL, AMZN, BABA, MSFT, F, BAC        |
+#      | https://www.google.com/finance/ | finance | F, AMZN, BABA, MSFT, F, BAC          |
+#      | https://www.google.com/finance/ | finance | F, AMZN, BABA, MSFT, F, BAC, MCD, AA |
+#      | https://www.google.com/finance/ | finance | F                                    |

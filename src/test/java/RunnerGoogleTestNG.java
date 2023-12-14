@@ -5,5 +5,5 @@ import io.cucumber.testng.CucumberOptions;
         features = "classpath:features/",
         plugin = {"pretty", "html:target/cucumber-reports.html"},
         tags = "@googleFinance")
-public class RunnerGoogleTestNJ extends AbstractTestNGCucumberTests{
+public class RunnerGoogleTestNG extends AbstractTestNGCucumberTests{
 }

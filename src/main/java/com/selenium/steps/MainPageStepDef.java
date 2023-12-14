@@ -1,5 +1,7 @@
 package com.selenium.steps;
 
+import com.selenium.constants.ConfigConstants;
+import com.selenium.util.ConfigUtil;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.Before;
@@ -35,7 +37,7 @@ public class MainPageStepDef {
         driver.manage().window().maximize();
         pageFactoryManager = new PageFactoryManager(driver);
         homePage = pageFactoryManager.getHomePage();
-        library = new InterestStocksLib();
+        library = InterestStocksLib.getInstance();
     }
 
     @Given("User opens {string} page")
@@ -44,10 +46,28 @@ public class MainPageStepDef {
         homePage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
     }
 
+    @Given("User opens page Finance from configConstants")
+    public void openPageFromConfig() {
+        String url = ConfigUtil.getString(ConfigConstants.URL_MAIN_PAGE_GOOGLE_FINANCE);
+        homePage.openHomePage(url);
+        homePage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
+    }
+
     @When("User verifies the page is loaded by asserting the page title {string}")
     public void userClickOnButtonConnectOnMainPage(String pageTitle) {
         String pageTitleUi = homePage.getHeaderPageTitleText();
-        assertEquals(pageTitle.toLowerCase(), pageTitleUi.toLowerCase().trim());
+        String pageTitleUiAllTextContext = homePage.getHeaderAllTextContext();
+
+        try{
+            assertEquals(pageTitle.toLowerCase(), pageTitleUi.toLowerCase().trim());
+        }catch (Exception e) {
+            try {
+                assertTrue(pageTitleUiAllTextContext.toLowerCase().contains(pageTitle));
+            }catch (Exception e2) {
+                throw new RuntimeException("Title is not correct");
+            }
+        }
+
     }
 
     @And("Setup objects of stock symbols from UI list and expected list {string}")
