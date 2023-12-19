@@ -76,6 +76,14 @@ public class MainPageStepDef {
         library.setActualListOfStocksObject(homePage.getStocks());
     }
 
+    @And("Setup objects of stock symbols from UI list that positive and expected list {string}")
+    public void setupObjectsOfStockSymbolsFromUiListOfPositiveStocksAndExpectedList(String string) {
+        library.setExpectedListOfStocksObject(List.of(string.split(",")));
+        library.setActualListOfStocksObject(homePage.getStocksAllInfo());
+        homePage.getStocksAllInfo().forEach(log::info);
+
+    }
+
     @Then("Print all stock symbols that are in actual list but not in expected list")
     public void printAllStockSymbolsThatAreInActualStockSymbolsButNotInExpected() {
         library.printStockSymbolsThatAreInActualListButNotInExpectedList();
