@@ -20,10 +20,10 @@ public class HomePage extends BasePage {
         driver.get(url);
     }
 
-    @FindBy(xpath = "//div[@class='gb_kd gb_ed gb_qd']//span[contains(text(),'Finance')]")
+    @FindBy(xpath = "//*[@id='sdgBod']/span[contains(text(),'Finance')]")
     private WebElement headerPageTitle;
 
-    @FindBy(xpath = "//header[@class='gb_Ja gb_ab gb_Nd gb_ld gb_gd gb_Tc']")
+    @FindBy(xpath = "//*[@id='gb']")
     private WebElement header;
 
     @FindBy(xpath = "//ul[@class='sbnBtf']/li//div[contains(@class, 'COaKTb')]")

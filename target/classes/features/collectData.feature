@@ -1,6 +1,6 @@
 @googleFinance
 
-Feature:  Task from meeting
+Feature:  Collect data
 
   Scenario Outline:  Task from meeting
     Given User opens page Finance from configConstants
