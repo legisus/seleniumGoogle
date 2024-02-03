@@ -36,16 +36,17 @@ public class MainPageStepDef {
         ChromeOptions options = new ChromeOptions(); //TODO refactor
         options.setBinary("/usr/bin/google-chrome");
         log.info("options.setBinary path");
-//        options.addArguments("--headless");
-
-
-        options.addArguments("--no-sandbox");
         options.addArguments("--headless");
-//        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
 //        options.addArguments("--whitelisted-ips");
         options.addArguments("--disable-extensions");
         options.addArguments("start-maximized");
         options.addArguments("incognito");
+
+
+
 
         chromedriver().setup();
         driver = new ChromeDriver();
