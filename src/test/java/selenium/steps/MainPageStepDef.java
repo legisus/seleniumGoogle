@@ -1,5 +1,6 @@
 package selenium.steps;
 
+import org.openqa.selenium.chrome.ChromeOptions;
 import selenium.constants.ConfigConstants;
 import selenium.library.InterestStocksLib;
 import selenium.manager.PageFactoryManager;
@@ -32,6 +33,19 @@ public class MainPageStepDef {
 
     @Before
     public void testsSetUp() {
+        ChromeOptions options = new ChromeOptions(); //TODO refactor
+        options.setBinary("/usr/bin/chrome-linux64/chrome");
+//        options.addArguments("--headless");
+
+
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
+//        options.addArguments("--disable-dev-shm-usage");
+//        options.addArguments("--whitelisted-ips");
+        options.addArguments("--disable-extensions");
+        options.addArguments("start-maximized");
+        options.addArguments("incognito");
+
         chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
