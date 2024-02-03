@@ -1,4 +1,4 @@
-@googleFinance
+#@googleFinance
 
 Feature:  “You may be interested in info” ... using API
 

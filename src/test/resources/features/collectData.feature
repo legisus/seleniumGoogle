@@ -1,4 +1,4 @@
-@googleFinance
+#@googleFinance
 
 Feature:  Collect data
 
