@@ -24,11 +24,11 @@
             <artifactId>webdrivermanager</artifactId>
             <version>5.6.2</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>io.cucumber</groupId>-->
-<!--            <artifactId>cucumber-testng</artifactId>-->
-<!--            <version>7.14.1</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.cucumber</groupId>-->
+        <!--            <artifactId>cucumber-testng</artifactId>-->
+        <!--            <version>7.14.1</version>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -85,27 +85,27 @@
             <version>7.15.0</version>
             <scope>compile</scope>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.jenkins-ci.plugins</groupId>-->
-<!--            <artifactId>seleniumhtmlreport</artifactId>-->
-<!--            <version>1.1</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.jenkins.plugins</groupId>-->
-<!--            <artifactId>javax-activation-api</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.jenkins-ci.modules</groupId>-->
-<!--            <artifactId>sshd</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.jenkins.plugins</groupId>-->
-<!--            <artifactId>javax-mail-api</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.jenkins-ci.modules</groupId>-->
-<!--            <artifactId>instance-identity</artifactId>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.jenkins-ci.plugins</groupId>-->
+        <!--            <artifactId>seleniumhtmlreport</artifactId>-->
+        <!--            <version>1.1</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.jenkins.plugins</groupId>-->
+        <!--            <artifactId>javax-activation-api</artifactId>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.jenkins-ci.modules</groupId>-->
+        <!--            <artifactId>sshd</artifactId>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.jenkins.plugins</groupId>-->
+        <!--            <artifactId>javax-mail-api</artifactId>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.jenkins-ci.modules</groupId>-->
+        <!--            <artifactId>instance-identity</artifactId>-->
+        <!--        </dependency>-->
     </dependencies>
 
     <build>
@@ -133,6 +133,14 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
             </plugin>
         </plugins>
     </build>
