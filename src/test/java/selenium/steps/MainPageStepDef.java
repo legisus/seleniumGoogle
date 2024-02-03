@@ -1,5 +1,6 @@
 package selenium.steps;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
 import selenium.constants.ConfigConstants;
 import selenium.library.InterestStocksLib;
@@ -33,24 +34,30 @@ public class MainPageStepDef {
 
     @Before
     public void testsSetUp() {
-        ChromeOptions options = new ChromeOptions(); //TODO refactor
+        ChromeOptions options = new ChromeOptions();
         options.setBinary("/usr/bin/google-chrome");
         log.info("options.setBinary path");
+
+        log.info("Updated ChromeOptions for headless execution");
         options.addArguments("--headless");
         options.addArguments("--disable-gpu");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-//        options.addArguments("--whitelisted-ips");
         options.addArguments("--disable-extensions");
+        options.addArguments("--disable-setuid-sandbox");
+        options.addArguments("--disable-infobars");
+        options.addArguments("--remote-debugging-port=9222");
         options.addArguments("start-maximized");
         options.addArguments("incognito");
 
+        log.info("Ensure chromedriver is set up correctly");
+        WebDriverManager.chromedriver().setup();
 
-
-
-        chromedriver().setup();
-        driver = new ChromeDriver();
+        log.info("Instantiate ChromeDriver with specified options");
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
+
+        log.info("Initialize other components");
         pageFactoryManager = new PageFactoryManager(driver);
         homePage = pageFactoryManager.getHomePage();
         library = InterestStocksLib.getInstance();
