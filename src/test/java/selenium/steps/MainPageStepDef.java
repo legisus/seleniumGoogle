@@ -34,7 +34,8 @@ public class MainPageStepDef {
     @Before
     public void testsSetUp() {
         ChromeOptions options = new ChromeOptions(); //TODO refactor
-        options.setBinary("/usr/bin/chrome-linux64/chrome");
+        options.setBinary("/usr/bin/google-chrome");
+        log.info("options.setBinary path");
 //        options.addArguments("--headless");
 
 
