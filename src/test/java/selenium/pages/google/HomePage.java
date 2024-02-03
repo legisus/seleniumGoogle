@@ -15,7 +15,12 @@ public class HomePage extends BasePage {
     }
 
     public void openHomePage(String url) {
-        driver.get(url);
+        try{
+            driver.get(url);
+            pageLoadWait(5000);
+        }catch (Exception e) {
+            e.getCause();
+        }
     }
 
     @FindBy(xpath = "//*[@id='sdgBod']/span[contains(text(),'Finance')]")
