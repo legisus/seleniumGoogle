@@ -17,7 +17,7 @@ public class HomePage extends BasePage {
     public void openHomePage(String url) {
         try{
             driver.get(url);
-            pageLoadWait(5000);
+            pageLoadWait(30000);
         }catch (Exception e) {
             e.getCause();
         }
