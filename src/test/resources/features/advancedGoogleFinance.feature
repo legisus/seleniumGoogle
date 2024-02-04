@@ -1,4 +1,4 @@
-@googleFinance
+#@googleFinance
 
 Feature:  As user I want to verify the stock symbols listed under the section “You may be interested in info” ... using properties file
 
