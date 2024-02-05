@@ -35,7 +35,7 @@ public class MainPageStepDef {
     @Before
     public void testsSetUp() {
         ChromeOptions options = new ChromeOptions();
-        options.setBinary("/usr/bin/google-chrome");
+//        options.setBinary("/usr/bin/google-chrome");
         log.info("options.setBinary path");
 
         log.info("Updated ChromeOptions for headless execution");
@@ -66,6 +66,13 @@ public class MainPageStepDef {
     @Given("User opens {string} page")
     public void openPage(String url) {
         homePage.openHomePage(url);
+        homePage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
+    }
+
+
+    @Given("User opens google finance page")
+    public void openPage() {
+        homePage.openHomePage("https://www.google.com/finance");
         homePage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
     }
 
